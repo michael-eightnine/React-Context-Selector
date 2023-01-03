@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ReadsContext from "./components/ReadsContext";
+import ReadsContextViaSlice from "./components/ReadsContextViaSlice";
+import UpdatesContext from "./components/UpdatesContext";
+import UpdatesContextViaSlice from "./components/UpdatesContextViaSlice";
+import { PrimaryContextProvider } from "./context/PrimaryContext";
+import "./style/app.scss";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const App = () => (
+  <PrimaryContextProvider>
+    <div className="row">
+      <ReadsContext />
+      <ReadsContextViaSlice />
     </div>
-  );
-}
+    <div className="row">
+      <UpdatesContext />
+      <UpdatesContextViaSlice />
+    </div>
+  </PrimaryContextProvider>
+);
 
 export default App;
