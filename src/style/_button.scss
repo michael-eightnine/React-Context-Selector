@@ -1,0 +1,21 @@
+.button {
+  background-color: rgb(34, 102, 230);
+  border: none;
+  box-shadow: none;
+  color: white;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  font-weight: bold;
+
+  &:hover {
+    background-color: darken(rgb(34, 102, 230), 10);
+  }
+
+  &--warn {
+    background-color: rgb(191, 45, 91);
+
+    &:hover {
+      background-color: darken(rgb(191, 45, 91), 10);
+    }
+  }
+}

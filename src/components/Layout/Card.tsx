@@ -9,11 +9,9 @@ type Props = {
 const Card = ({ children, title, renderCount }: Props) => (
   <div className="card">
     <h3 className="card__header" key={renderCount}>
-      {title} <span>{renderCount}</span>
+      {title} <span>Render Count: {renderCount}</span>
     </h3>
-    <div className="card__inner">
-    {children}
-    </div>
+    <div className="card__main">{children}</div>
   </div>
 );
 

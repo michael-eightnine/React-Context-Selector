@@ -5,28 +5,22 @@ import React, {
 } from "react";
 import { useObjectState } from "../utils/state";
 
-const noop = () => {};
-
 export interface PrimaryContextValue {
   updateContextValue: (_: any) => void;
-  countsTotal: 0;
-  firstListItem: null;
-  counterOne: 0;
-  counterTwo: 0;
-  counterThree: 0;
-  storedFunction: () => void;
-  storedList: [];
-  storedObject: {};
+  countsTotal: number;
+  counterOne: number;
+  counterTwo: number;
+  counterThree: number;
+  storedList: number[];
+  storedObject: Record<string, string>;
 }
 
 const PrimaryContext = createContext<PrimaryContextValue>({
   updateContextValue: (_: any) => {},
   countsTotal: 0,
-  firstListItem: null,
   counterOne: 0,
   counterTwo: 0,
   counterThree: 0,
-  storedFunction: noop,
   storedList: [],
   storedObject: {}
 });
@@ -41,7 +35,6 @@ const PrimaryContextProvider = ({
       counterOne,
       counterTwo,
       counterThree,
-      storedFunction,
       storedList,
       storedObject,
       storedRef,
@@ -51,7 +44,6 @@ const PrimaryContextProvider = ({
     counterOne: 0,
     counterTwo: 0,
     counterThree: 0,
-    storedFunction: () => {},
     storedList: [],
     storedObject: {},
     storedRef: {},
@@ -69,16 +61,13 @@ const PrimaryContextProvider = ({
 
   const contextValue = useMemo(() => {
     const countsTotal = counterOne + counterTwo + counterThree;
-    const firstListItem = storedList[0];
 
     return {
       updateContextValue,
       countsTotal,
-      firstListItem,
       counterOne,
       counterTwo,
       counterThree,
-      storedFunction,
       storedList,
       storedObject,
       storedRef,
@@ -87,7 +76,6 @@ const PrimaryContextProvider = ({
     counterOne,
     counterThree,
     counterTwo,
-    storedFunction,
     storedList,
     storedObject,
     storedRef,

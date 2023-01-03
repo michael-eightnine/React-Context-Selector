@@ -1,8 +1,8 @@
-import useRenderCount from "../hooks/useRenderCount";
-import ValueList from "./ValueList";
-import Card from "./Card";
-import { PrimaryContext, PrimaryContextValue } from "../context/PrimaryContext";
-import withContextSlice from "../hoc/withContextSlice";
+import useRenderCount from "../../hooks/useRenderCount";
+import ValueList from "../Layout/ValueList";
+import Card from "../Layout/Card";
+import { PrimaryContext, PrimaryContextValue } from "../../context/PrimaryContext";
+import withContextSlice from "../../hoc/withContextSlice";
 
 const contextProperties = ["storedObject", "countsTotal"] as const;
 

@@ -1,0 +1,11 @@
+.hoc {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-width: 500px;
+
+  &__debug {
+    padding: 1rem;
+    border: 1px solid rgb(78, 78, 78);
+  }
+}
