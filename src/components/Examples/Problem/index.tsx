@@ -11,7 +11,11 @@ const codeString = `interface PrimaryContextValue {
   storedList: number[];
   storedObject: Record<string, string>;
   updateContextValue: (_: any) => void; // setState equivalent
-}`;
+}
+
+...
+
+const { storedObject, countsTotal } = useContext(PrimaryContext);`;
 
 const Problem = () => (
   <>
